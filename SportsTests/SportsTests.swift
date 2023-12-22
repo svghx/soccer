@@ -27,7 +27,7 @@ final class SportsTests: XCTestCase {
 
     func testGenerateTeams() {
         let teamCount = 20
-        let teams = TeamGenerator.generateTeams(count: 20)
+        let teams = TeamGenerator.generateTeams(count: teamCount)
         
         XCTAssertEqual(teams.count, teamCount, "Generated teams count should be equal to the specified team count")
         

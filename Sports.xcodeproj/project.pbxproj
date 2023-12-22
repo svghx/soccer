@@ -11,12 +11,13 @@
 		1634CDD52B35F7E00019FD1E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDD42B35F7E00019FD1E /* UIViewController+Extensions.swift */; };
 		1634CDD72B35F8070019FD1E /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDD62B35F8070019FD1E /* CoordinatorProtocol.swift */; };
 		1634CDD92B35F81B0019FD1E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDD82B35F81B0019FD1E /* MainCoordinator.swift */; };
-		1634CDDB2B35F8A10019FD1E /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDDA2B35F8A10019FD1E /* TeamViewController.swift */; };
+		1634CDDB2B35F8A10019FD1E /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDDA2B35F8A10019FD1E /* GamesViewController.swift */; };
 		1634CDDD2B3609B00019FD1E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDDC2B3609B00019FD1E /* MainViewModel.swift */; };
 		1634CDE22B360B1E0019FD1E /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDE12B360B1E0019FD1E /* TeamViewModel.swift */; };
+		16BE9DC22B360F4100A780B9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE9DC12B360F4100A780B9 /* MainViewController.swift */; };
 		16E8817F2B35BBE80042FCE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E8817E2B35BBE80042FCE5 /* AppDelegate.swift */; };
 		16E881812B35BBE80042FCE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E881802B35BBE80042FCE5 /* SceneDelegate.swift */; };
-		16E881832B35BBE80042FCE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E881822B35BBE80042FCE5 /* MainViewController.swift */; };
+		16E881832B35BBE80042FCE5 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E881822B35BBE80042FCE5 /* StandingsViewController.swift */; };
 		16E881862B35BBE80042FCE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E881842B35BBE80042FCE5 /* Main.storyboard */; };
 		16E881882B35BBE90042FCE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E881872B35BBE90042FCE5 /* Assets.xcassets */; };
 		16E8818B2B35BBE90042FCE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E881892B35BBE90042FCE5 /* LaunchScreen.storyboard */; };
@@ -57,13 +58,14 @@
 		1634CDD42B35F7E00019FD1E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		1634CDD62B35F8070019FD1E /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1634CDD82B35F81B0019FD1E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		1634CDDA2B35F8A10019FD1E /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		1634CDDA2B35F8A10019FD1E /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		1634CDDC2B3609B00019FD1E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1634CDE12B360B1E0019FD1E /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
+		16BE9DC12B360F4100A780B9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		16E8817B2B35BBE80042FCE5 /* Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E8817E2B35BBE80042FCE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16E881802B35BBE80042FCE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16E881822B35BBE80042FCE5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		16E881822B35BBE80042FCE5 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		16E881852B35BBE80042FCE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16E881872B35BBE90042FCE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16E8818A2B35BBE90042FCE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -137,15 +139,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		1634CDDF2B360ADA0019FD1E /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				16E881C22B35D0550042FCE5 /* TeamCell.swift */,
-				16E881C52B35D73A0042FCE5 /* FixtureCell.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		1634CDE02B360AFB0019FD1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +148,16 @@
 				16E8818C2B35BBE90042FCE5 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16BE9DC32B360F4F00A780B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				16BE9DC12B360F4100A780B9 /* MainViewController.swift */,
+				16E881822B35BBE80042FCE5 /* StandingsViewController.swift */,
+				1634CDDA2B35F8A10019FD1E /* GamesViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		16E881722B35BBE80042FCE5 = {
@@ -186,6 +189,7 @@
 				1634CDD32B35F7D10019FD1E /* Extensions */,
 				16E881BB2B35CCA50042FCE5 /* Helpers */,
 				16E881AE2B35BD870042FCE5 /* Models */,
+				16BE9DC32B360F4F00A780B9 /* Controllers */,
 				16E881C42B35D0590042FCE5 /* Views */,
 				1634CDDE2B3609B70019FD1E /* ViewModels */,
 				1634CDE02B360AFB0019FD1E /* Supporting Files */,
@@ -243,9 +247,8 @@
 		16E881C42B35D0590042FCE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1634CDDF2B360ADA0019FD1E /* Shared */,
-				16E881822B35BBE80042FCE5 /* MainViewController.swift */,
-				1634CDDA2B35F8A10019FD1E /* TeamViewController.swift */,
+				16E881C22B35D0550042FCE5 /* TeamCell.swift */,
+				16E881C52B35D73A0042FCE5 /* FixtureCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,15 +384,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BE9DC22B360F4100A780B9 /* MainViewController.swift in Sources */,
 				1634CDD92B35F81B0019FD1E /* MainCoordinator.swift in Sources */,
 				16E881C82B35D76D0042FCE5 /* Fixture.swift in Sources */,
 				16E881B02B35BDE10042FCE5 /* Team.swift in Sources */,
 				16E881BA2B35C86D0042FCE5 /* TeamProtocol.swift in Sources */,
-				16E881832B35BBE80042FCE5 /* MainViewController.swift in Sources */,
+				16E881832B35BBE80042FCE5 /* StandingsViewController.swift in Sources */,
 				1634CDE22B360B1E0019FD1E /* TeamViewModel.swift in Sources */,
 				16E8817F2B35BBE80042FCE5 /* AppDelegate.swift in Sources */,
 				16E881C32B35D0550042FCE5 /* TeamCell.swift in Sources */,
-				1634CDDB2B35F8A10019FD1E /* TeamViewController.swift in Sources */,
+				1634CDDB2B35F8A10019FD1E /* GamesViewController.swift in Sources */,
 				16E881C12B35CF090042FCE5 /* FixtureResult.swift in Sources */,
 				1634CDD52B35F7E00019FD1E /* UIViewController+Extensions.swift in Sources */,
 				16E881BD2B35CCEA0042FCE5 /* TeamGenerator.swift in Sources */,

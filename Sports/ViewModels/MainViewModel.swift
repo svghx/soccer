@@ -12,11 +12,6 @@ class MainViewModel {
     var teams:[Team] = []
     var fixtures:[Fixture] = []
     
-    init() {
-        generateTeams()
-        generateFixtures(teams: teams)
-    }
-    
     func generateTeams() {
         teams = TeamGenerator.generateTeams()
     }

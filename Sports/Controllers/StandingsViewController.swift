@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  StandingsViewController.swift
 //  Sports
 //
 //  Created by Sevgjan Haxhija on 12/22/23.
@@ -7,14 +7,30 @@
 
 import UIKit
 
-class MainViewController: UIViewController, Storyboarded {
-    weak var coordinator: Coordinator?
-    var model: MainViewModel = MainViewModel()
+class StandingsViewController: UIViewController {
+    weak var coordinator: Coordinator? = nil
+    
+    var teams:[Team] = []
+    var fixtures:[Fixture] = []
+    
+    public convenience init(teams: [Team], fixtures: [Fixture]) {
+        self.init(nibName: nil, bundle: nil)
+        self.teams = teams
+        self.fixtures = fixtures
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .white
         tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(TeamCell.self, forCellReuseIdentifier: TeamCell.reuseIdentifier)
@@ -24,10 +40,9 @@ class MainViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Soccer League"
+        title = "Standings"
         
         // Do any additional setup after loading the view.
-        
         setupTableView()
     }
     
@@ -45,48 +60,32 @@ class MainViewController: UIViewController, Storyboarded {
         ])
         
         // Sort teams based on points in descending order
-        model.teams.sort { $0.points > $1.points }
+        teams.sort { $0.points > $1.points }
         tableView.reloadData()
     }
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
+extension StandingsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? model.teams.count : model.fixtures.count
+        return teams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TeamCell.reuseIdentifier, for: indexPath) as? TeamCell else {
-                fatalError("Failed to dequeue a reusable cell.")
-            }
-            
-            let team = model.teams[indexPath.row]
-            cell.configure(with: team)
-            return cell
-        default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: FixtureCell.reuseIdentifier, for: indexPath) as? FixtureCell else {
-                fatalError("Failed to dequeue a reusable cell.")
-            }
-            
-            let fixture = model.fixtures[indexPath.row]
-            cell.configure(with: fixture)
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TeamCell.reuseIdentifier, for: indexPath) as? TeamCell else {
+            fatalError("Failed to dequeue a reusable cell.")
         }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "Standings" : "Games"
+        
+        let team = teams[indexPath.row]
+        cell.configure(with: team)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            let team = model.teams[indexPath.row]
-            coordinator?.showDetails(team: team)
+        let team = teams[indexPath.row]
+        let teamFixtures = fixtures.filter {
+            return $0.homeTeam.name == team.name || $0.awayTeam.name == team.name
         }
+        coordinator?.showGames(team: team, fixtures: teamFixtures)
     }
 }

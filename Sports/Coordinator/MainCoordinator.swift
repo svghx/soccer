@@ -21,11 +21,19 @@ final class MainCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    
-    func showDetails(team: Team) {
-        let vc = TeamViewController()
+    func showStandings(teams: [Team], fixtures: [Fixture]) {
+        let vc = StandingsViewController(teams: teams, fixtures: fixtures)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
-
+    }
+    
+    func showGames(team: Team, fixtures: [Fixture]) {
+        let vc = GamesViewController(team: team, fixtures: fixtures)
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showTeam(team: Team) {
+        
     }
 }

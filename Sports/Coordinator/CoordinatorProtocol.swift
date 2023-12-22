@@ -11,5 +11,7 @@ protocol Coordinator: NSObject {
     var navigationController: UINavigationController {get set}
         
     func start()
-    func showDetails(team: Team)
+    func showStandings(teams: [Team], fixtures: [Fixture])
+    func showGames(team: Team, fixtures: [Fixture])
+    func showTeam(team: Team)
 }
