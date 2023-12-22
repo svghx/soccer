@@ -12,6 +12,8 @@
 		1634CDD72B35F8070019FD1E /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDD62B35F8070019FD1E /* CoordinatorProtocol.swift */; };
 		1634CDD92B35F81B0019FD1E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDD82B35F81B0019FD1E /* MainCoordinator.swift */; };
 		1634CDDB2B35F8A10019FD1E /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDDA2B35F8A10019FD1E /* TeamViewController.swift */; };
+		1634CDDD2B3609B00019FD1E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDDC2B3609B00019FD1E /* MainViewModel.swift */; };
+		1634CDE22B360B1E0019FD1E /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634CDE12B360B1E0019FD1E /* TeamViewModel.swift */; };
 		16E8817F2B35BBE80042FCE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E8817E2B35BBE80042FCE5 /* AppDelegate.swift */; };
 		16E881812B35BBE80042FCE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E881802B35BBE80042FCE5 /* SceneDelegate.swift */; };
 		16E881832B35BBE80042FCE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E881822B35BBE80042FCE5 /* MainViewController.swift */; };
@@ -56,6 +58,8 @@
 		1634CDD62B35F8070019FD1E /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1634CDD82B35F81B0019FD1E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		1634CDDA2B35F8A10019FD1E /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		1634CDDC2B3609B00019FD1E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1634CDE12B360B1E0019FD1E /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
 		16E8817B2B35BBE80042FCE5 /* Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E8817E2B35BBE80042FCE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16E881802B35BBE80042FCE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,35 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1634CDDE2B3609B70019FD1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1634CDDC2B3609B00019FD1E /* MainViewModel.swift */,
+				1634CDE12B360B1E0019FD1E /* TeamViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1634CDDF2B360ADA0019FD1E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				16E881C22B35D0550042FCE5 /* TeamCell.swift */,
+				16E881C52B35D73A0042FCE5 /* FixtureCell.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		1634CDE02B360AFB0019FD1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16E881842B35BBE80042FCE5 /* Main.storyboard */,
+				16E881872B35BBE90042FCE5 /* Assets.xcassets */,
+				16E881892B35BBE90042FCE5 /* LaunchScreen.storyboard */,
+				16E8818C2B35BBE90042FCE5 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		16E881722B35BBE80042FCE5 = {
 			isa = PBXGroup;
 			children = (
@@ -147,19 +180,15 @@
 		16E8817D2B35BBE80042FCE5 /* Sports */ = {
 			isa = PBXGroup;
 			children = (
-				1634CDCF2B35F7870019FD1E /* Coordinator */,
-				1634CDD32B35F7D10019FD1E /* Extensions */,
-				16E881C42B35D0590042FCE5 /* Views */,
-				16E881BB2B35CCA50042FCE5 /* Helpers */,
-				16E881AE2B35BD870042FCE5 /* Models */,
 				16E8817E2B35BBE80042FCE5 /* AppDelegate.swift */,
 				16E881802B35BBE80042FCE5 /* SceneDelegate.swift */,
-				16E881822B35BBE80042FCE5 /* MainViewController.swift */,
-				1634CDDA2B35F8A10019FD1E /* TeamViewController.swift */,
-				16E881842B35BBE80042FCE5 /* Main.storyboard */,
-				16E881872B35BBE90042FCE5 /* Assets.xcassets */,
-				16E881892B35BBE90042FCE5 /* LaunchScreen.storyboard */,
-				16E8818C2B35BBE90042FCE5 /* Info.plist */,
+				1634CDCF2B35F7870019FD1E /* Coordinator */,
+				1634CDD32B35F7D10019FD1E /* Extensions */,
+				16E881BB2B35CCA50042FCE5 /* Helpers */,
+				16E881AE2B35BD870042FCE5 /* Models */,
+				16E881C42B35D0590042FCE5 /* Views */,
+				1634CDDE2B3609B70019FD1E /* ViewModels */,
+				1634CDE02B360AFB0019FD1E /* Supporting Files */,
 			);
 			path = Sports;
 			sourceTree = "<group>";
@@ -214,8 +243,9 @@
 		16E881C42B35D0590042FCE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				16E881C22B35D0550042FCE5 /* TeamCell.swift */,
-				16E881C52B35D73A0042FCE5 /* FixtureCell.swift */,
+				1634CDDF2B360ADA0019FD1E /* Shared */,
+				16E881822B35BBE80042FCE5 /* MainViewController.swift */,
+				1634CDDA2B35F8A10019FD1E /* TeamViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -356,6 +386,7 @@
 				16E881B02B35BDE10042FCE5 /* Team.swift in Sources */,
 				16E881BA2B35C86D0042FCE5 /* TeamProtocol.swift in Sources */,
 				16E881832B35BBE80042FCE5 /* MainViewController.swift in Sources */,
+				1634CDE22B360B1E0019FD1E /* TeamViewModel.swift in Sources */,
 				16E8817F2B35BBE80042FCE5 /* AppDelegate.swift in Sources */,
 				16E881C32B35D0550042FCE5 /* TeamCell.swift in Sources */,
 				1634CDDB2B35F8A10019FD1E /* TeamViewController.swift in Sources */,
@@ -364,6 +395,7 @@
 				16E881BD2B35CCEA0042FCE5 /* TeamGenerator.swift in Sources */,
 				16E881C62B35D73A0042FCE5 /* FixtureCell.swift in Sources */,
 				1634CDD72B35F8070019FD1E /* CoordinatorProtocol.swift in Sources */,
+				1634CDDD2B3609B00019FD1E /* MainViewModel.swift in Sources */,
 				16E881B52B35C54C0042FCE5 /* Player.swift in Sources */,
 				16E881B72B35C60C0042FCE5 /* Coach.swift in Sources */,
 				16E881812B35BBE80042FCE5 /* SceneDelegate.swift in Sources */,
@@ -551,7 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sports/Info.plist;
+				INFOPLIST_FILE = "Sports/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -582,7 +614,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sports/Info.plist;
+				INFOPLIST_FILE = "Sports/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -9,9 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController, Storyboarded {
     weak var coordinator: Coordinator?
+    var model: MainViewModel = MainViewModel()
     
-    var teams:[Team] = []
-    var fixtures:[Fixture] = []
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,12 +27,6 @@ class MainViewController: UIViewController, Storyboarded {
         title = "Soccer League"
         
         // Do any additional setup after loading the view.
-        teams = TeamGenerator.generateTeams()
-        fixtures = FixtureGenerator.generateFixtures(teams: teams)
-        
-        fixtures.forEach { fixture in
-            fixture.updatePoints()
-        }
         
         setupTableView()
     }
@@ -52,7 +45,7 @@ class MainViewController: UIViewController, Storyboarded {
         ])
         
         // Sort teams based on points in descending order
-        teams.sort { $0.points > $1.points }
+        model.teams.sort { $0.points > $1.points }
         tableView.reloadData()
     }
 }
@@ -62,7 +55,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? teams.count : fixtures.count
+        return section == 0 ? model.teams.count : model.fixtures.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +65,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 fatalError("Failed to dequeue a reusable cell.")
             }
             
-            let team = teams[indexPath.row]
+            let team = model.teams[indexPath.row]
             cell.configure(with: team)
             return cell
         default:
@@ -80,7 +73,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 fatalError("Failed to dequeue a reusable cell.")
             }
             
-            let fixture = fixtures[indexPath.row]
+            let fixture = model.fixtures[indexPath.row]
             cell.configure(with: fixture)
             return cell
         }
@@ -92,7 +85,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            let team = teams[indexPath.row]
+            let team = model.teams[indexPath.row]
             coordinator?.showDetails(team: team)
         }
     }
