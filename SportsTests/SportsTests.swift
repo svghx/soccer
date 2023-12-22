@@ -18,14 +18,6 @@ final class SportsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
@@ -33,4 +25,42 @@ final class SportsTests: XCTestCase {
         }
     }
 
+    func testGenerateTeams() {
+        let teamCount = 20
+        let teams = TeamGenerator.generateTeams(count: 20)
+        
+        XCTAssertEqual(teams.count, teamCount, "Generated teams count should be equal to the specified team count")
+        
+        for team in teams {
+            XCTAssertFalse(team.name.isEmpty, "Team name should not be empty")
+            XCTAssertNotNil(team.coach, "Team should have a coach")
+            XCTAssertFalse(team.players.isEmpty, "Team should have players")
+            XCTAssertTrue(team.strength >= 1 && team.strength <= 10, "Team strength should be within the valid range")
+            XCTAssertTrue(team.weakness >= 1 && team.weakness <= 10, "Team weakness should be within the valid range")
+        }
+        
+        // Check for uniqueness of team names
+        let teamNames = teams.map { $0.name }
+        XCTAssertEqual(Set(teamNames).count, teamCount, "Team names should be unique")
+        
+        // Check for uniqueness of coach names
+        let coachNames = teams.map { $0.coach.fullName }
+        XCTAssertEqual(Set(coachNames).count, teamCount, "Coach names should be unique")
+    }
+    
+    
+    func testTeamPlayAgainstAll() {
+        let teams = TeamGenerator.generateTeams()
+        let fixtures = FixtureGenerator.generateFixtures(teams: teams)
+        
+        for team in teams {
+            var opponentsPlayed: Set<Team> = []
+            for fixture in fixtures {
+                opponentsPlayed.insert(fixture.homeTeam == team ? fixture.awayTeam : fixture.homeTeam)
+            }
+            
+            // Assert that each team has played against every other team
+            XCTAssertEqual(opponentsPlayed.count, teams.count - 1, "Team \(team.name) should play against every other team.")
+        }
+    }
 }

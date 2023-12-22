@@ -54,3 +54,13 @@ class Team: TeamProtocol, Identifiable  {
     }
 }
 
+extension Team: Hashable {
+    
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(name)
+    }
+    
+    static func == (lhs: Team, rhs: Team) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
