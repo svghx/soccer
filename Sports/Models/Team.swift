@@ -42,15 +42,6 @@ class Team: TeamProtocol, Identifiable  {
     
     func updatePoints(points: Int) {
         self.points += points
-//        switch result {
-//        case .win:
-//            self.points += points
-//        case .draw:
-//            self.points +=
-//        case .loss:
-//            // No points for a loss
-//            break
-//        }
     }
 }
 

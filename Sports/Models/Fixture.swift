@@ -41,16 +41,4 @@ struct Fixture: Identifiable {
             return .draw
         }
     }
-    
-//    func updatePoints(for team: inout Team, result: FixtureResult) {
-//        switch result {
-//        case .win:
-//            team.points += 3
-//        case .draw:
-//            team.points += 1
-//        case .loss:
-//            // No points for a loss
-//            break
-//        }
-//    }
 }
